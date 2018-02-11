@@ -15,12 +15,18 @@ describe('movies paginate', () => {
         it('paginates to page 2', () => {
             cy.get('.pagination').within( () => {
                 cy.get('a').eq(2)
-                    .click({force:true})
-                  
-               
+                    .click({force:true})         
             })
+            cy.get('.title').should('contain', 'Before Midnight')
          
         })
+        
+        it('paginates to the last page', () =>{
+            cy.get('.pagination > li > a').eq(8)
+                .click({force:true})
+            cy.get('.title').should('contain', 'V for Vendetta')    
+        })
+
     })
 
 });

@@ -30,7 +30,13 @@ describe('load application', () => {
         cy.get('button')
             .should('be.visible')
             .and('have.id', 'sort-by-dropdown') 
-    })  
+    }) 
+    
+    it('movies are searchable', () => {
+        cy.get('[type=text]').focus()
+            .type('Mary and Max')
+            .type('{enter}')
+    })
       
      
 })

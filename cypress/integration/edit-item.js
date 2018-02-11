@@ -29,7 +29,7 @@ describe('Connect with db', () => {
  
          it('selects genre', () => {
              cy.get('.Select--multi').trigger('mousedown')
-                 // .type('{arrowdown}')
+                //  .type('{arrowdown}')
                  //researching how to properly target multi-select dropdown
          })
          
