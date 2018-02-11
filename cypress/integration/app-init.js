@@ -37,6 +37,12 @@ describe('load application', () => {
             .type('Mary and Max')
             .type('{enter}')
     })
+    
+    it('deletes movie', () =>{
+        cy.get('.title > h3 > a').eq(5).next().click()
+        cy.get('.modal-title').should('contain', 'Confirmation')
+        cy.get('.modal-footer > button').eq(0).click({force:true})
+    })
       
      
 })
